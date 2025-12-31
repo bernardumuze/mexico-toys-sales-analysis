@@ -89,18 +89,37 @@ The dashboard features a sophisticated hierarchical filtering system, allowing u
 * **Step 1 (Location Type):** Users select a broad category (e.g., *Downtown*).
 * **Step 2 (Cascading Slicer):** The "Store Name" slicer automatically updates via the relational model to show **only** the stores belonging to that category (e.g., *Guadalajara 1, Monterrey 2*).
 * **Step 3 (Dynamic Context):** The report header instantly updates to reflect the selection via the `Selected Location Title` measure, providing immediate confirmation of the data context.
-      
-## **7.💡 Key Business Insights & Recommendations**
-* **Top Category:** Art & Crafts drives the highest order volume across all store types.
-* **Seasonal Trends:** Revenue reached its peak in **March**, followed by a steady plateau and a sharp decline in **August/September**.
-* **Operational Opportunity:** By filtering for specific locations like "Airport" or "Downtown," managers can identify location-specific inventory needs.
+
+## **7 💡 Key Business Findings & Actionable Insights**
+Through data visualization and trend analysis, I identified three primary areas for operational optimization:
+### **📈 Peak Profitability Window**
+* **Finding:** Revenue and Profit reached an annual peak in **March**, driven primarily by the **Art & Crafts** category.
+* **Actionable Insight:** Increase marketing spend and safety stock levels for this category 30 days prior to the March peak to maximize capture and prevent stockouts.
+### **🏢 Location-Specific Demand**
+* **Finding:** **Downtown** locations significantly outperform **Airport** stores in total order volume; however, Airport stores maintain a higher **Profit Margin** per transaction.
 * **Regional & Store-Level Analysis:** By selecting a location type from the slicer, users can identify every specific store location and city operating within that category
      * Airport: Filter to see performance across all airport-based stores to track travel-hub sales.
      * Commercial: Identify specific stores located in business districts and industrial zones.
      * Downtown: Drill down into high-density urban centers to see city-specific results.
      * Residential: View all neighborhood-based stores to understand local community shopping habits.
+* **Actionable Insight:** Prioritize high-margin, "grab-and-go" inventory for Airport locations, while utilizing volume-based bundle promotions for Downtown stores to capitalize on high foot traffic.
+### **📉 The Q3 Performance Slump**
+* **Finding:** There is a significant performance dip across all store types during **August and September**.
+* **Actionable Insight:** This period identifies a strategic window for "Back-to-School" or "End of Summer" clearance events to liquidate aging inventory and maintain healthy cash flow.
 
-## **8. 🛠️ Tools Used
+## **8 Technical Challenges & Solutions**
+Building a professional-grade dashboard presented several technical hurdles that required advanced DAX and Data Modeling logic:
+### **1. Engineering a Custom Time-Intelligence Schema**
+* **Challenge:** The raw sales data lacked comprehensive date attributes (such as "Start of Month" or "Day Name"), preventing accurate Year-over-Year (YoY) or Month-over-Month (MoM) trend analysis.
+* **Solution:** I engineered a dedicated **Calendar Dimension Table** using Power Query. By establishing a **1:Many relationship** with the Sales fact table, I enabled the use of Time-Intelligence DAX functions like `TOTALYTD` and `DATEADD`.
+### **2. Implementing Context-Aware Dynamic Headers**
+* **Challenge:** When users filtered by city or store, the dashboard title remained static, leading to potential confusion regarding the active data segment.
+* **Solution:** I developed a nested DAX measure using `SELECTEDVALUE`. This measure "listens" to the slicer selection and updates the title string dynamically. If no specific filter is applied, it defaults to **"All Locations"** to ensure constant clarity for the stakeholder.
+### **3. Optimizing UX with Reset Logic**
+* **Challenge:** Slicers in Power BI can be "sticky," and manually clearing multiple filter hierarchies (Location > City > Store) created a friction-heavy user experience.
+* **Solution:** I utilized **Bookmarks and Action Buttons**. By capturing the "Default State" of the data model, I mapped a **Reset Button** to that specific bookmark, allowing users to revert to the high-level view in a single click.
+
+## **9. 🛠️ Tools Used
 * **Power BI Desktop:** (Data Modeling, DAX, Visualization)
 * **Power Query:** ETL processes (Data Cleaning, Merging, and Transformation).
 * **GitHub:** Version control and project documentation.
