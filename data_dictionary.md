@@ -46,8 +46,20 @@ To ensure data transparency and facilitate a smooth onboarding experience for st
 ### **5. Key Calculated Measures (DAX)**
 *The business logic layer used to drive dashboard visuals.*
 
-* **Total Revenue:** `SUMX(Sales, Sales[Units] * RELATED(Products[Product_Price]))`
-* **Total Profit:** `[Total Revenue] - SUMX(Sales, Sales[Units] * RELATED(Products[Product_Cost]))`
-* **Selected Location Title:** A dynamic measure that updates the report header based on user slicer selections.
+## 🔢 Key Calculated Measures (DAX)
+I developed a comprehensive DAX library to drive KPI performance tracking, time-intelligence analysis, and dynamic report headers.
+
+| Measure Name | DAX Formula | Business Purpose |
+| :--- | :--- | :--- |
+| **Total Revenue** | `$Total Revenue = SUMX(Sales, Sales[Quantity] * RELATED(Products[Product_Price]))$` | Calculates gross sales across all transactions. |
+| **Total Profit** | `$Total Profit = [Total Revenue] - SUMX(Sales, Sales[Quantity] * RELATED(Products[Product_Cost]))$` | Calculates net profit by subtracting unit costs from sales. |
+| **Total Orders** | `$Total Orders = COUNT(Sales[Order_ID])$` | Tracks the total volume of unique customer transactions. |
+| **Revenue YTD** | `$Revenue YTD = TOTALYTD([Total Revenue], 'calendar'[Date])$` | Tracks cumulative revenue from the start of the year. |
+| **Total Orders YTD** | `$Total Orders YTD = TOTALYTD([Total Orders], 'calendar'[Date])$` | Tracks cumulative transaction volume for the year. |
+| **Total Profit YTD** | `$Total Profit YTD = TOTALYTD([Total Profit], 'calendar'[Date])$` | Tracks year-to-date bottom-line growth. |
+| **Last Month Revenue** | `$Last Month Revenue = CALCULATE([Total Revenue], DATEADD('calendar'[Date], -1, MONTH))$` | Enables Month-over-Month (MoM) growth comparisons. |
+| **Total Orders Target** | `$Total Orders Target = CALCULATE([Total Orders], DATEADD('calendar'[Date], -1, MONTH))$` | Sets a benchmark based on the previous month's performance. |
+| **Total Profit Target** | `$Total Profit Target = CALCULATE([Total Profit], DATEADD('calendar'[Date], -1, MONTH))$` | Measures current profitability against the previous 30 days. |
+| **Selected Location Title** | `Selected Location Title = "Revenue Trends for " & SELECTEDVALUE(stores[Store_City], "All Locations")` | Dynamically updates the report title based on user filters. |
 
 ---
