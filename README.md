@@ -84,10 +84,10 @@ Measures profitability against the previous 30-day period to identify margin flu
 * **Seasonal Trends:** Revenue reached its peak in **March**, followed by a steady plateau and a sharp decline in **August/September**.
 * **Operational Opportunity:** By filtering for specific locations like "Airport" or "Downtown," managers can identify location-specific inventory needs.
 * **Regional & Store-Level Analysis:** By selecting a location type from the slicer, users can identify every specific store location and city operating within that category
-     * **Airport: Filter to see performance across all airport-based stores to track travel-hub sales.
-     * **Commercial: Identify specific stores located in business districts and industrial zones.
-     * **Downtown: Drill down into high-density urban centers to see city-specific results.
-     * **Residential: View all neighborhood-based stores to understand local community shopping habits.
+     * Airport: Filter to see performance across all airport-based stores to track travel-hub sales.
+     * Commercial: Identify specific stores located in business districts and industrial zones.
+     * Downtown: Drill down into high-density urban centers to see city-specific results.
+     * Residential: View all neighborhood-based stores to understand local community shopping habits.
 
 ## **6. 🛠️ Tools Used
 * **Power BI Desktop:** (Data Modeling, DAX, Visualization)
