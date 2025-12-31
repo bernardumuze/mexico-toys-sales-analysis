@@ -12,7 +12,7 @@ This project analyzes Maven Mexico Toys retail data and transforms it into an in
 
 ## 🖼️ Dashboard Preview
 
-<img width="1367" height="772" alt="dashboard-preview png" src="https://github.com/user-attachments/assets/5c86c906-af92-478c-915f-ce53624c6399" />
+<img width="1367" height="772" alt="Mexico Toys-Strategic Sales & Inventory Analysis" src="assets/dashboard-preview.png" />
 
 ## **1. Data Connection & Profiling**
 * Connected to **sales, products, stores, and calendar** CSV files.
