@@ -68,7 +68,7 @@ Used as a benchmark to compare current month order volume against the previous m
 Measures profitability against the previous 30-day period to identify margin fluctuations.
  `Total Profit Target = CALCULATE([Total Profit], DATEADD('calendar'[Date], -1, MONTH))
 
-**10. Selected Location Title
+**10. Selected Location Title**
  Enhances report interactivity by dynamically updating the chart header based on user slicer selections (e.g., "Revenue Trends for Mexico City" or "Revenue Trends for All Locations").
  `Selected Location Title = "Revenue Trends for " & SELECTEDVALUE(stores[Store_City], SELECTEDVALUE(stores[Store_Location], "All Locations"))
 
