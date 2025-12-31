@@ -78,8 +78,19 @@ Measures profitability against the previous 30-day period to identify margin flu
     * **Bar Chart:** Total orders broken down by product category (Art & Crafts, Toys, etc.).
     * **Line Chart:** Monthly revenue trends showing performance peaks and valleys.
     * **Interactive Slicer:** Allowing users to filter the entire report by store location.
+ 
+## **5. Interactive Button Navigation**
+Instead of complicating the report with multiple pages, I utilized **Power BI Buttons and Bookmarks** to create a high-performance, single-page application experience:
+* **🔄 Reset Filters Button:** Allows users to instantly clear all slicer selections (Location, City, and Store) and return to the high-level "All Locations" view with a single click.
+* **🔘 Interactive Slicer Panel:** I implemented a toggle button that expands and collapses the filter menu. This maximizes the "real estate" for data visualizations while keeping powerful filtering tools accessible.
+
+## **6. Dynamic "Drill-Through" Filtering**
+The dashboard features a sophisticated hierarchical filtering system, allowing users to move from broad categories down to specific operational units:
+* **Step 1 (Location Type):** Users select a broad category (e.g., *Downtown*).
+* **Step 2 (Cascading Slicer):** The "Store Name" slicer automatically updates via the relational model to show **only** the stores belonging to that category (e.g., *Guadalajara 1, Monterrey 2*).
+* **Step 3 (Dynamic Context):** The report header instantly updates to reflect the selection via the `Selected Location Title` measure, providing immediate confirmation of the data context.
       
-## **5.💡 Key Business Insights & Recommendations**
+## **7.💡 Key Business Insights & Recommendations**
 * **Top Category:** Art & Crafts drives the highest order volume across all store types.
 * **Seasonal Trends:** Revenue reached its peak in **March**, followed by a steady plateau and a sharp decline in **August/September**.
 * **Operational Opportunity:** By filtering for specific locations like "Airport" or "Downtown," managers can identify location-specific inventory needs.
@@ -89,7 +100,7 @@ Measures profitability against the previous 30-day period to identify margin flu
      * Downtown: Drill down into high-density urban centers to see city-specific results.
      * Residential: View all neighborhood-based stores to understand local community shopping habits.
 
-## **6. 🛠️ Tools Used
+## **8. 🛠️ Tools Used
 * **Power BI Desktop:** (Data Modeling, DAX, Visualization)
 * **Power Query:** ETL processes (Data Cleaning, Merging, and Transformation).
 * **GitHub:** Version control and project documentation.
