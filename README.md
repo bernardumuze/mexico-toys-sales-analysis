@@ -2,7 +2,7 @@
 
 ## Maven Toys: Strategic Sales & Inventory Analysis.
 This project analyzes Maven Mexico Toys retail data and transforms it into an intuitive business intelligence tool. The aim is to provide stakeholders with clear insights to help them understand revenue trends, product performance, and how to improve inventory at different store locations.
-> **📥 Download the Project:** [Click here to download the .pbix file](Maven_Toys_Analysis_Small.pbix)
+> **📥 Download the Project:** [Click here to download the .pbix file](Maven_Toys_Analysis__Small.pbix)
 
 ### **Key Business Metrics (YTD)**
 * **Total Revenue:** $6.96M
