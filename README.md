@@ -36,39 +36,39 @@ To drive the KPI cards and trend lines, I developed the following measures:
 Used to calculate the gross sales across all transactions.
 `Total Revenue = SUMX(Sales, Sales[Quantity] * RELATED(Products[Product_Price]))`
 
-**2. Total Profit**
+* **Total Profit**
 Calculated by subtracting the product cost from the sales price for every unit sold.
 `Total Profit = [Total Revenue] - SUMX(Sales, Sales[Quantity] * RELATED(Products[Product_Cost]))`
 
-**3. Total Orders**
+* **Total Orders**
 A simple count of unique transactions to track volume.
 `Total Orders = COUNT(Sales[Order_ID])`
 
-**4. Revenue YTD (Year-to-Date)**
+* **Revenue YTD (Year-to-Date)**
 This time-intelligence measure allows stakeholders to track cumulative sales performance from the start of the fiscal year to the current date.
 `Revenue YTD = TOTALYTD(SUM(Sales[Revenue]), 'calendar'[Date])`
 
-**5. Total Orders YTD (Year-to-Date)**
+* **Total Orders YTD (Year-to-Date)**
 Tracks the total volume of transactions handled by the retail chain from the start of the year.
 `Total Orders YTD = TOTALYTD(COUNT(sales[Store_ID]), 'calendar'[Date])`
 
-**6. Total Profit YTD**
+* **Total Profit YTD**
 Calculates the cumulative profit from the start of the year, providing a clear view of bottom-line growth.
 `Total Profit YTD = TOTALYTD(SUM(Sales[Profit]), 'calendar'[Date])`
 
-**7. Last Month Revenue**
+* **Last Month Revenue**
 This comparative measure uses `CALCULATE` and `DATEADD` to retrieve sales data from the previous month, enabling the calculation of growth percentages.
 `Last Month Revenue = CALCULATE([Total Revenue], DATEADD('calendar'[Date], -1, MONTH))`
 
-**8. Total OrdersTarget**
+* **Total OrdersTarget**
 Used as a benchmark to compare current month order volume against the previous month's performance.
 `Total OrdersTarget = CALCULATE([Total Orders], DATEADD('calendar'[Date], -1, MONTH))`
 
-**9. Total Profit Target**
+* **Total Profit Target**
 Measures profitability against the previous 30-day period to identify margin fluctuations.
  `Total Profit Target = CALCULATE([Total Profit], DATEADD('calendar'[Date], -1, MONTH))
 
-**10. Selected Location Title**
+* **Selected Location Title**
  Enhances report interactivity by dynamically updating the chart header based on user slicer selections (e.g., "Revenue Trends for Mexico City" or "Revenue Trends for All Locations").
  `Selected Location Title = "Revenue Trends for " & SELECTEDVALUE(stores[Store_City], SELECTEDVALUE(stores[Store_Location], "All Locations"))
 
