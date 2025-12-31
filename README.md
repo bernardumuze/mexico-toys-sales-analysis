@@ -9,10 +9,8 @@ This project analyzes Maven Mexico Toys retail data and transforms it into an in
 * **Total Orders:** 408,417
 
 ---
+<img width="1367" height="772" alt="dashboard-preview png" src="https://github.com/user-attachments/assets/283eb7d6-67bd-4fa4-858a-9b57650b4350" />
 
-## 🖼️ Dashboard Preview
-
-![Dashboard Preview](assets/dashboard-preview.png)
 
 ## **1. Data Connection & Profiling**
 * Connected to **sales, products, stores, and calendar** CSV files.
