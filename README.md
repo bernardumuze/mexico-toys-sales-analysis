@@ -109,13 +109,13 @@ Through data visualization and trend analysis, I identified three primary areas 
 
 ## **8 Technical Challenges & Solutions**
 Building a professional-grade dashboard presented several technical hurdles that required advanced DAX and Data Modeling logic:
-* **Engineering a Custom Time-Intelligence Schema
+* **Engineering a Custom Time-Intelligence Schema**
     * Challenge:** The raw sales data lacked comprehensive date attributes (such as "Start of Month" or "Day Name"), preventing accurate Year-over-Year (YoY) or Month-over-Month (MoM) trend analysis.
     * Solution:** I engineered a dedicated **Calendar Dimension Table** using Power Query. By establishing a **1:Many relationship** with the Sales fact table, I enabled the use of Time-Intelligence       DAX functions like `TOTALYTD` and `DATEADD`.
-* **Implementing Context-Aware Dynamic Headers
+* **Implementing Context-Aware Dynamic Headers**
     * Challenge:** When users filtered by city or store, the dashboard title remained static, leading to potential confusion regarding the active data segment.
     * Solution:** I developed a nested DAX measure using `SELECTEDVALUE`. This measure "listens" to the slicer selection and updates the title string dynamically. If no specific filter is applied,         it defaults to **"All Locations"** to ensure constant clarity for the stakeholder.
-* **Optimizing UX with Reset Logic
+* **Optimizing UX with Reset Logic**
     * Challenge:** Slicers in Power BI can be "sticky," and manually clearing multiple filter hierarchies (Location > City > Store) created a friction-heavy user experience.
     * Solution:** I utilized **Bookmarks and Action Buttons**. By capturing the "Default State" of the data model, I mapped a **Reset Button** to that specific bookmark, allowing users to revert to        the high-level view in a single click.
 
