@@ -32,7 +32,7 @@ Implemented a Star Schema to optimize performance and usability.
 ## **3. DAX Calculations & Advanced Fields**
 To drive the KPI cards and trend lines, I developed the following measures:
 
-**1. Total Revenue**
+* **Total Revenue**
 Used to calculate the gross sales across all transactions.
 `Total Revenue = SUMX(Sales, Sales[Quantity] * RELATED(Products[Product_Price]))`
 
