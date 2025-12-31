@@ -15,7 +15,7 @@ This project analyzes Maven Mexico Toys retail data and transforms it into an in
 ---
 
 ## **1. Data Connection & Profiling**
-Connected to **sales, products, stores, and calendar** CSV files.
+* Connected to **sales, products, stores, and calendar** CSV files.
 * Reviewed table columns for blank or null values and confirmed accurate data types.
 * Identified primary and foreign keys and profiled the data to understand transaction volume and price ranges.
 * Added calculated columns in the calendar table for **'start of month'** and **'start of week'**.
@@ -24,6 +24,7 @@ Connected to **sales, products, stores, and calendar** CSV files.
 Implemented a Star Schema to optimize performance and usability.
 
 <img width="1086" height="631" alt="Star Schema Data Model for Maven Toys Sales Analysis" src="https://github.com/user-attachments/assets/e5962b8a-bd22-4a3a-9d9f-d369381a9973" />
+
 * Loaded tables into the data model and established relationships from the sales table to the products, stores, and calendar tables.
 * Developed a **Star Schema** following data modeling best practices with 1:many relationships.
 * Created a date hierarchy and hid foreign keys in the sales table to streamline the report view.
@@ -67,7 +68,7 @@ Used as a benchmark to compare current month order volume against the previous m
 Measures profitability against the previous 30-day period to identify margin fluctuations.
  `Total Profit Target = CALCULATE([Total Profit], DATEADD('calendar'[Date], -1, MONTH))
 
- **10. Selected Location Title
+**10. Selected Location Title
  Enhances report interactivity by dynamically updating the chart header based on user slicer selections (e.g., "Revenue Trends for Mexico City" or "Revenue Trends for All Locations").
  `Selected Location Title = "Revenue Trends for " & SELECTEDVALUE(stores[Store_City], SELECTEDVALUE(stores[Store_Location], "All Locations"))
 
@@ -77,6 +78,7 @@ Measures profitability against the previous 30-day period to identify margin flu
     * **Bar Chart:** Total orders broken down by product category (Art & Crafts, Toys, etc.).
     * **Line Chart:** Monthly revenue trends showing performance peaks and valleys.
     * **Interactive Slicer:** Allowing users to filter the entire report by store location.
+      
 ## **5.💡 Key Business Insights & Recommendations**
 * **Top Category:** Art & Crafts drives the highest order volume across all store types.
 * **Seasonal Trends:** Revenue reached its peak in **March**, followed by a steady plateau and a sharp decline in **August/September**.
