@@ -120,7 +120,7 @@ Building a professional-grade dashboard presented several technical hurdles that
     * Challenge:Slicers in Power BI can be "sticky," and manually clearing multiple filter hierarchies (Location > City > Store) created a friction-heavy user experience.
     * Solution:I utilized **Bookmarks and Action Buttons**. By capturing the "Default State" of the data model, I mapped a **Reset Button** to that specific bookmark, allowing users to revert to        the high-level view in a single click.
 
-## **9. 🛠️ Tools Used
+## **9. 🛠️ Tools Used**
 * **Power BI Desktop:** (Data Modeling, DAX, Visualization)
 * **Power Query:** ETL processes (Data Cleaning, Merging, and Transformation).
 * **GitHub:** Version control and project documentation.
